@@ -1,2 +1,3 @@
-# project-haptics
-Haptic Feedback
+# iOS Haptic Feedback
+You know...vibrations and stuffs, but with 🍎
+
