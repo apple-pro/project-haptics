@@ -15,26 +15,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNF-Ex-XJG">
-                                <rect key="frame" x="182.5" y="438" width="49" height="30"/>
-                                <state key="normal" title="Trigger"/>
-                                <connections>
-                                    <action selector="buttonPushed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YEx-lD-KGP"/>
-                                    <action selector="startButtonPush:" destination="BYZ-38-t0r" eventType="touchDown" id="lcU-fA-r2a"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qIn-b6-Lg0">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzj-Y5-qrg">
+                                        <rect key="frame" x="163" y="0.0" width="48" height="272.5"/>
+                                        <state key="normal" title="Impact">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="end:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BKJ-tI-mXT"/>
+                                            <action selector="start:" destination="BYZ-38-t0r" eventType="touchDown" id="sPZ-GE-iow"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOx-ZQ-bZL">
+                                        <rect key="frame" x="155" y="272.5" width="64" height="273"/>
+                                        <state key="normal" title="Selection"/>
+                                        <connections>
+                                            <action selector="end:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L8u-DV-c2v"/>
+                                            <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fsV-9F-exL"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="338-f6-dF9">
+                                        <rect key="frame" x="76.5" y="545.5" width="221" height="272.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyh-d4-Ufr">
+                                                <rect key="frame" x="0.0" y="0.0" width="34" height="30"/>
+                                                <state key="normal" title="Error">
+                                                    <color key="titleColor" red="0.65238773819999996" green="0.1122624353" blue="0.1133510843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="end:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uld-Cg-bhG"/>
+                                                    <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aAd-zv-GGe"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZj-XQ-GV3">
+                                                <rect key="frame" x="76" y="0.0" width="57" height="30"/>
+                                                <state key="normal" title="Warning">
+                                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="end:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XUJ-im-xfq"/>
+                                                    <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VL1-mn-KyD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcJ-mi-7Lp">
+                                                <rect key="frame" x="163" y="0.0" width="58" height="30"/>
+                                                <state key="normal" title="Success">
+                                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="end:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BXf-2a-OIH"/>
+                                                    <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9PW-Av-xcF"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="SNF-Ex-XJG" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="YbL-kd-Ws9"/>
-                            <constraint firstItem="SNF-Ex-XJG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="k4y-Xc-1Qz"/>
+                            <constraint firstItem="qIn-b6-Lg0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7fZ-0h-lGa"/>
+                            <constraint firstItem="qIn-b6-Lg0" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="otV-Qz-XPD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qIn-b6-Lg0" secondAttribute="trailing" constant="20" id="pM7-oB-L98"/>
+                            <constraint firstItem="qIn-b6-Lg0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tOL-Mg-J3Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="138"/>
+            <point key="canvasLocation" x="131.8840579710145" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>

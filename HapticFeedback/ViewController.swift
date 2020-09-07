@@ -10,24 +10,55 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var feedback: UIImpactFeedbackGenerator?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    var impact: UIImpactFeedbackGenerator?
+    var selection: UISelectionFeedbackGenerator?
+    var notification: UINotificationFeedbackGenerator?
+    
+    
+    @IBAction func start(_ sender: UIButton) {
+        if let title = sender.titleLabel?.text {
+            switch title {
+            case "Impact":
+                impact = UIImpactFeedbackGenerator()
+                impact?.prepare()
+            case "Selection":
+                selection = UISelectionFeedbackGenerator()
+                selection?.prepare()
+            default:
+                notification = UINotificationFeedbackGenerator()
+                notification?.prepare()
+            }
+        }
     }
     
-    @IBAction func startButtonPush(_ sender: UIButton) {
-        print("Start")
-        feedback = UIImpactFeedbackGenerator()
-        feedback?.prepare()
+    @IBAction func end(_ sender: UIButton) {
+        print("I:\(impact) S:\(selection) N:\(notification)")
+        
+        impact?.impactOccurred()
+        selection?.selectionChanged()
+        
+        if let title = sender.titleLabel?.text {
+            switch title {
+            case "Error":
+                notification?.notificationOccurred(.error)
+            case "Warning":
+                notification?.notificationOccurred(.error)
+            case "Success":
+                notification?.notificationOccurred(.success)
+                
+            default:
+                return
+            }
+        }
+        
+        clear()
+        
     }
     
-    @IBAction func buttonPushed(_ sender: UIButton) {
-        print("Pushed")
-        feedback?.impactOccurred()
-        feedback = nil
+    func clear() {
+        impact = nil
+        selection = nil
+        notification = nil
     }
-    
 }
 
